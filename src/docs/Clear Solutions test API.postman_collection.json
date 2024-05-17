@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "f2398718-e7c7-4d7b-84c4-00e5b6385b23",
+		"name": "Clear Solutions test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28276762"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"misterhurin@gmail.com\",\r\n    \"firstName\": \"Serhii\",\r\n    \"LastName\": \"Hurin\",\r\n    \"birthDate\": \"2003-10-13\",\r\n    \"address\": \"3-d Chymatskiy lane 10a\",\r\n    \"phoneNumber\": \"+380676836038\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search users by birth date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/search?fromDate=2001-01-01&toDate=2003-12-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2001-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2003-12-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users?email=sashko3@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "sashko3@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sashko3@gmail.com\",\r\n    \"firstName\": \"Oleksandr\",\r\n    \"lastName\": \"Amogus\",\r\n    \"birthDate\": \"2001-12-10\",\r\n    \"address\": \"3-d Chymatskiy lane 8\",\r\n    \"phoneNumber\": \"+380936542596\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users?email=sashko4@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "sashko4@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users?email=sashko3@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "sashko3@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints for operations with user entity"
+		}
+	]
+}

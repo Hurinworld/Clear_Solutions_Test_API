@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: clearsolutionsapi
+  datasource:
+    url: jdbc:mysql://localhost:3307/clear_solutions?useSSL=false&&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: bestuser
+    password: bestuser
+
+spring.jpa:
+  hibernate.ddl-auto: update
+
+custom:
+  minimal-allowed-age: 18 #years
